@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+<link rel="stylesheet"  href="css/bootstrap-theme.min.css">
+<link rel="stylesheet"  href="css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th onclick='teste();'>
+							#
+						</th>
+						<th>
+							Product
+						</th>
+						<th>
+							Payment Taken
+						</th>
+						<th>
+							Status
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							1
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Default
+						</td>
+					</tr>
+					<tr class="active">
+						<td>
+							1
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Approved
+						</td>
+					</tr>
+					<tr class="success">
+						<td>
+							2
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							02/04/2012
+						</td>
+						<td>
+							Declined
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							3
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							03/04/2012
+						</td>
+						<td>
+							Pending
+						</td>
+					</tr>
+					<tr class="danger">
+						<td>
+							4
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							04/04/2012
+						</td>
+						<td>
+							Call in to confirm
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/riot.js"></script>
+<script src="js/jquery.soap.js"></script>
+
+
+
+<script>
+
+
+
+function init() {
+ loadJSON(function(response) {
+  // Parse JSON string into object
+  alert('3');
+    var actual_JSON = response;
+    alert(actual_JSON[1].name);
+ });
+}
+ 
+
+ function loadJSON(callback) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'teste.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            //callback(xobj.responseText);
+            alert(xobj.data);
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+ }
+ 
+ function teste(){
+ 
+ $.soap({
+    url: 'https://suporte.dataprev.gov.br/axis/services/USD_R11_WebService/',
+    method: 'login',
+    params: {
+        username: 'luiz.dasilva',
+        password: 'testejava'
+    },
+    success: function (soapResponse) {
+        // do stuff with soapResponse
+        // if you want to have the response as JSON use soapResponse.toJSON();
+        // or soapResponse.toString() to get XML string
+        // or soapResponse.toXML() to get XML DOM
+		alert(soapResponse.toString());
+    },
+    error: function (SOAPResponse) {
+        // show error
+		alert(SOAPResponse);
+    }
+});
+
+}
+ 
+ 
+  // A $( document ).ready() block.
+$( document ).ready(function() {
+    //alert(1);
+    //init();
+    //alert(2);
+ 
+});
+
+
+</script>
+</body>
+</html>
