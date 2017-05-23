@@ -16,7 +16,7 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th onclick='teste();'>
+						<th>
 							#
 						</th>
 						<th>
@@ -69,9 +69,7 @@
 function init() {
  loadJSON(function(response) {
   // Parse JSON string into object
-  alert('3');
     var actual_JSON = response;
-    alert(actual_JSON[1].name);
  });
 }
  
@@ -91,10 +89,7 @@ function init() {
     };
     xobj.send(null);  
  }
- 
- function teste(){
-	alert('ok'); 
-}
+
  
  
   // A $( document ).ready() block.
