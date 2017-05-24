@@ -16,11 +16,11 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>
+						<th onclick='init()'>
 							#
 						</th>
 						<th>
-							Teste2
+							Teste3
 						</th>
 						<th>
 							Payment Taken
@@ -70,6 +70,7 @@ function init() {
  loadJSON(function(response) {
   // Parse JSON string into object
     var actual_JSON = response;
+	 console.log(actual_JSON);
  });
 }
  
