@@ -1,107 +1,19 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 3, from LayoutIt!</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+  </head>
+  <body>
 
 
-<link rel="stylesheet"  href="css/bootstrap-theme.min.css">
-<link rel="stylesheet"  href="css/bootstrap.min.css">
+	  <iframe width="100%" height="1080"  src="http://n461p0116e00516-ext.nuvemdtp/?consulta=projeto/nome/Informações Gerenciais - Datamart do CNIS" frameborder="0" allowfullscreen></iframe
 
-</head>
-<body>
-
-
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<table class="table">
-				<thead>
-					<tr>
-						<th onclick='init()'>
-							#
-						</th>
-						<th>
-							Teste3
-						</th>
-						<th>
-							Payment Taken
-						</th>
-						<th>
-							Status
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							1
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							01/04/2012
-						</td>
-						<td>
-							Default
-						</td>
-					</tr>
-					
-				</tbody>
-			</table>
-		</div>
-	</div>
-</div>
-
-
-
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/riot.js"></script>
-<script src="js/jquery.soap.js"></script>
-
-
-
-<script>
-
-
-
-function init() {
- loadJSON(function(response) {
-  // Parse JSON string into object
-    var actual_JSON = response;
-	 console.log(actual_JSON);
- });
-}
- 
-
- function loadJSON(callback) {   
-
-    var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'teste.json', true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-          if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            //callback(xobj.responseText);
-            alert(xobj.data);
-            callback(xobj.responseText);
-          }
-    };
-    xobj.send(null);  
- }
-
- 
- 
-  // A $( document ).ready() block.
-$( document ).ready(function() {
-    //alert(1);
-    //init();
-    //alert(2);
- 
-});
-
-
-</script>
-</body>
+  </body>
 </html>
